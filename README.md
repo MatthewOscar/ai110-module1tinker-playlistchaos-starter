@@ -111,3 +111,9 @@ If you finish early or want an extra challenge, try one of these:
 - Stay curious. The unpredictability is intentional and part of the experience.
 
 When you finish, Playlist Chaos will feel more predictable, and you will have taken your first steps into AI-assisted debugging.
+
+---
+
+## Summary
+
+The core concept here is learning to read code critically and trace behavior back from the UI to the logic, rather than trusting that AI-generated code works just because it runs. Students are most likely to struggle with the stats bugs in `compute_playlist_stats` because the code looks reasonable at a glance, but you have to actually think about what `len(hype)` means versus `len(all_songs)` and notice that the wrong list is being summed for average energy. The search bug is another tricky one since `value in q` versus `q in value` is a small difference that completely flips the behavior. AI was genuinely helpful for explaining what individual functions do and spotting the reversed search condition, but it sometimes wanted to rewrite entire functions when a one-line fix was all that was needed. If I were guiding a student, I would ask them to pick a specific song, predict which playlist it should land in based on the rules, then walk through the `classify_song` function line by line with that song's actual values to see where the prediction breaks down.
